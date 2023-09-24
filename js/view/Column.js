@@ -1,7 +1,11 @@
 import KanbanAPI from "../api/KanbanAPI.js";
+import DropZone from "./DropZone.js";
+import Item from "./Item.js";
 
 export default class Column {
     constructor(id, title){
+        const topDropZone = DropZone.createDropZone();
+
         this.elements = {};
         this.elements.root = Column.createRoot();
         this.elements.title = this.elements.root.querySelector('.kanban__column-title');
@@ -10,12 +14,20 @@ export default class Column {
 
         this.elements.root.dataset.id = id;
         this.elements.title.textContent = title;
+        this.elements.items.appendChild(topDropZone);
 
-        /* KanbanAPI.getItems().then( (value) => {
-            value.forEach(item => {
-                console.log(item);
+        this.elements.addItem.addEventListener('click', () => {
+            const newItem = {'name': 'New Item', 'columnId': id, 'description': 'New Item Description', 'position': 1};
+            const item = KanbanAPI.insertObject(newItem, "item")
+            this.renderItem(item);
+        });
+
+        Column.getItemByColumnId(id, 'item').then( (item) => {
+            item.forEach(element => {
+                this.renderItem(element);
             });
-        }); */
+            
+        });
     }
 
 
@@ -25,10 +37,21 @@ export default class Column {
         return range.createContextualFragment(`
             <div class="kanban__column">
                 <div class="kanban__column-title"></div>
-                <div class="kaban__column-items"></div>
+                <div class="kanban__column-items"></div>
                 <button class="kanban__add-item" type="button">+ Add</button>
             </div>
         `).children[0];
     }
 
+    static getItemByColumnId(columnId){
+        return KanbanAPI.getItemsByColumnId(columnId,'item').then( (value) => {
+            return value.json();
+        })
+    }
+
+    renderItem(data){
+        const item = new Item(data.itemId, data.name);
+        
+        this.elements.items.appendChild(item.elements.root);
+    }
 }

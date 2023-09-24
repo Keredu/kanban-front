@@ -7,7 +7,6 @@ export default class Kanban {
 
         Kanban.columns().then(columns => {
             columns.forEach(column => {
-                console.log(column);
                 const columnInstance = new Column(column.columnId, column.name);
 
                 this.root.appendChild(columnInstance.elements.root);
@@ -16,7 +15,13 @@ export default class Kanban {
     }
 
     static columns(){
-        return KanbanAPI.getItems().then( (value) => {
+        return KanbanAPI.getObjects('column').then( (value) => {
+            return value.json();
+        })
+    };
+
+    static columnsId(){
+        return KanbanAPI.getObjectID(1,'column').then( (value) => {
             return value.json();
         })
     };
