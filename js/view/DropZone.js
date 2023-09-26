@@ -2,7 +2,7 @@ import KanbanAPI from "../api/KanbanAPI.js";
 
 
 export default class DropZone{
-    /*
+    /**
     * This function creates the dropzone
     *
     * @class
@@ -25,7 +25,7 @@ export default class DropZone{
             dropZone.classList.remove('kanban__dropzone--active');
         });
 
-        /*
+        /**
         * This function drops the item in the dropzone
         *
         * @event

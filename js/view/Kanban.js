@@ -2,6 +2,13 @@ import Column from './Column.js';
 import KanbanAPI from '../api/KanbanAPI.js';
 
 export default class Kanban {
+    /**
+    * This function creates the kanban
+    *
+    * @constructor
+    * 
+    * @param {root}
+    */
     constructor(root){
         this.root = root;
 
@@ -14,12 +21,12 @@ export default class Kanban {
         });
     }
 
-    /*
+    /**
     * This function gets all the columns from the database
     *
     * @function
     * 
-    * @returns{Promise<Response>}
+    * @returns {Promise<Response>}
     */
     static columns(){
         return KanbanAPI.getObjects('column').then( (value) => {

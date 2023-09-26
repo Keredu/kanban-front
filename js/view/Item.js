@@ -50,7 +50,7 @@ export default class Item {
 
     }
 
-    /*
+    /**
     * This function creates the root of the item
     *
     * @function

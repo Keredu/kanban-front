@@ -1,28 +1,30 @@
 # Kanban-front
 
-Este es el repositorio donde está alojado la parte front del proyecto de Kanban. La parte back-end se encuentra [aquí](https://github.com/Keredu/kanban).
 
-# Clonación del repositorio
+This is the repository where the front part of the Kanban project is hosted. The back-end is located [here](https://github.com/Keredu/kanban).
 
-Para clonar este fichero, se debe hacer uso del comando `git clone git@github.com:Keredu/kanban.git <nombre carpeta>`.
+# Cloning the repository
+
+To download the repository, you must use the `git clone git@github.com:Keredu/kanban.git` command.
 
 # Creación de ramas del repositorio
 
-Este proyecto cuenta con dos ramas principales:
+This project has two important branches:
 
-- master: esta rama es la principal del proyecto y es donde se guarda la última versión productiva.
-- dev: esta rama sirve para integrar todas las características o arreglos que se producen durante el desarrollo.
+- main: it is the main branch of the project and it is where the latest productive version is saved.
+- dev: this branch serves to integrate all the features or fixes that occur during development.
 
-Siempre que se quiera crear una nueva rama en el proyecto, debemos realizar lo siguiente:
+# Contributions
+If you want to contribute to the project, you must create a new branch as follows:
 
-1. Movernos a la rama dev con el comando `git checkout dev`.
-2. Actualizar dicha rama con los últimos cambios `git pull`.
-3. Una vez comprobemos que la rama dev está actualizada, debemos utilizar el comando `git checkout -b <nombre rama>`.
-4. Para el nombre de la rama se utilizará el siguiente estándar:
-    - Si la rama añade una nueva característica: el nombre de la rama será feature/<nombre caracteristica>.
-    - Si la rama aplica un correctivo: el nombre de la rama será fix/<nombre correctivo>.
+1. Move to the dev branch with the `git checkout dev` command.
+2. Update said branch with the latest changes with `git pull`.
+3. Check that the dev branch is updated, then use `git checkout -b <nombre rama>`.
+4. The following standard will be used for the branch name:
+    - If the branch adds a new **feature** the branch name will be feature/name.
+    - If the branch applies a **fix** the branch name will be fix/name.
 
-Cuando hayamos terminado de aplicar los cambios a la nueva rama creada y queramos integrar en la rama dev. Debemos crear una pull-request que apunte a dev y siempre debe estar asignada a otro compañero para que valide que los cambios son correctos.
+To integrate the changes, you must make a pull-request pointing to the dev branch and assign it to another developer to validate that these changes are correct.
 
 # Instalación y ejecución de la página web
 
