@@ -3,6 +3,16 @@ import DropZone from "./DropZone.js";
 import Item from "./Item.js";
 
 export default class Column {
+    /*
+    * This function creates a new column
+    *
+    * @constructor
+    * 
+    * @param{id}
+    * @param{title}
+    * 
+    * @returns{Column} - the new column
+    */
     constructor(id, title){
         const topDropZone = DropZone.createDropZone();
 
@@ -16,21 +26,32 @@ export default class Column {
         this.elements.title.textContent = title;
         this.elements.items.appendChild(topDropZone);
 
+        /*
+        @event
+        */
         this.elements.addItem.addEventListener('click', () => {
             const newItem = {'name': 'New Item', 'columnId': id, 'description': 'New Item Description', 'position': 1};
             const item = KanbanAPI.insertObject(newItem, "item")
             this.renderItem(item);
         });
 
+        /*
+        This function render the items in the column
+        */
         Column.getItemByColumnId(id, 'item').then( (item) => {
             item.forEach(element => {
                 this.renderItem(element);
-            });
-            
+            });    
         });
     }
 
-
+    /*
+    * This function creates the root of the column
+    *
+    * @function
+    * 
+    * @returns{DocumentFragment}
+    */
     static createRoot(){
         const range = document.createRange();
         range.selectNode(document.body);
@@ -43,12 +64,28 @@ export default class Column {
         `).children[0];
     }
 
+    /*
+    * This function returns all the items in the column
+    *
+    * @function
+    *   
+    * @param{columnId}
+    * 
+    * @returns{Promise<Response>} - the promise of all the items in the column
+    */
     static getItemByColumnId(columnId){
         return KanbanAPI.getItemsByColumnId(columnId,'item').then( (value) => {
             return value.json();
         })
     }
 
+    /*
+    * This function renders an item in the column
+    *
+    * @function
+    * 
+    * @param{data}
+    */
     renderItem(data){
         const item = new Item(data.itemId, data.name);
         

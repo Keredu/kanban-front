@@ -14,14 +14,15 @@ export default class Kanban {
         });
     }
 
+    /*
+    * This function gets all the columns from the database
+    *
+    * @function
+    * 
+    * @returns{Promise<Response>}
+    */
     static columns(){
         return KanbanAPI.getObjects('column').then( (value) => {
-            return value.json();
-        })
-    };
-
-    static columnsId(){
-        return KanbanAPI.getObjectID(1,'column').then( (value) => {
             return value.json();
         })
     };
