@@ -2,6 +2,13 @@ import KanbanAPI from "../api/KanbanAPI.js";
 
 
 export default class DropZone{
+    /**
+    * This function creates the dropzone
+    *
+    * @class
+    * 
+    * @returns{DocumentFragment}
+    */
     static createDropZone(){
         const range = document.createRange();
         range.selectNode(document.body);
@@ -18,6 +25,13 @@ export default class DropZone{
             dropZone.classList.remove('kanban__dropzone--active');
         });
 
+        /**
+        * This function drops the item in the dropzone
+        *
+        * @event
+        * 
+        * @param{e} - the event
+        */
         dropZone.addEventListener('drop', e => {
             e.preventDefault();
             dropZone.classList.remove('kanban__dropzone--active');
