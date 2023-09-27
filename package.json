@@ -1,7 +1,7 @@
 {
   "scripts": {
     "jsdoc": "jsdoc -r ./src/ -d ./docs",
-    "docs": "jsdoc && http-server ./docs -p 8081",
+    "docs": "npm run jsdoc && http-server ./docs -p 8081",
     "http-server": "http-server ./src -p 8080"
   },
   "dependencies": {
