@@ -3,18 +3,27 @@
 
 This is the repository where the front part of the Kanban project is hosted. The back-end is located [here](https://github.com/Keredu/kanban).
 
-# Cloning the repository
+## Cloning the repository
 
 To download the repository, you must use the `git clone git@github.com:Keredu/kanban.git` command.
 
-# Creación de ramas del repositorio
+## Branches
 
 This project has two important branches:
 
 - main: it is the main branch of the project and it is where the latest productive version is saved.
 - dev: this branch serves to integrate all the features or fixes that occur during development.
 
-# Contributions
+## Documentation
+The documentation is built using JSDoc.
+
+### Installation
+``npm install jsdoc``.
+
+### Build the documentation
+``jsdoc -r .``
+
+## Contributions
 If you want to contribute to the project, you must create a new branch as follows:
 
 1. Move to the dev branch with the `git checkout dev` command.
