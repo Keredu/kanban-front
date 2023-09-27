@@ -18,10 +18,23 @@ This project has two important branches:
 The documentation is built using JSDoc.
 
 ### Installation
-``npm install jsdoc``.
+```
+npm install jsdoc http-server
+```
 
 ### Build the documentation
-``jsdoc -r .``
+Add the following code to your ``package.json`` file:
+```
+  "scripts": {
+    "jsdoc": "jsdoc -r ./src/ -d ./docs",
+    "docs": "npm run jsdoc && http-server ./docs -p 8080"
+  }
+```
+and run
+```
+npm run docs
+```
+
 
 ## Contributions
 If you want to contribute to the project, you must create a new branch as follows:

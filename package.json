@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "jsdoc": "jsdoc -r ./src/ -d ./docs",
+    "docs": "npm run jsdoc && http-server ./docs -p 8080"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "jsdoc": "^4.0.2"
+  }
+}
