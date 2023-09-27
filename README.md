@@ -3,56 +3,51 @@
 
 This is the repository where the front part of the Kanban project is hosted. The back-end is located [here](https://github.com/Keredu/kanban).
 
-## Cloning the repository
 
-To download the repository, you must use the `git clone git@github.com:Keredu/kanban.git` command.
+## Get Started
+1. Clone the repository
 
-## Branches
+```
+git clone git@github.com:Keredu/kanban.git
+```
 
-This project has two important branches:
+2. Install dependencies
+```
+npm ci
+``` 
 
-- main: it is the main branch of the project and it is where the latest productive version is saved.
-- dev: this branch serves to integrate all the features or fixes that occur during development.
+3. Deploy the web server with ``http-server``:
+```
+npm run http-server
+``` 
+
+
 
 ## Documentation
-The documentation is built using JSDoc.
-
-### Installation
-```
-npm install jsdoc http-server
-```
-
-### Build the documentation
-Add the following code to your ``package.json`` file:
-```
-  "scripts": {
-    "jsdoc": "jsdoc -r ./src/ -d ./docs",
-    "docs": "npm run jsdoc && http-server ./docs -p 8080"
-  }
-```
-and run
+The documentation is built using JSDoc. First, make sure you have followed the getting started section. Then, run:
 ```
 npm run docs
 ```
 
 
 ## Contributions
+### Main branches
+This project has two permanent branches:
+
+- main: it is the main branch of the project and it is where the latest productive version is saved.
+- dev: this branch serves to integrate all the features or fixes that occur during development.
+
+### Contribute
 If you want to contribute to the project, you must create a new branch as follows:
 
 1. Move to the dev branch with the `git checkout dev` command.
 2. Update said branch with the latest changes with `git pull`.
-3. Check that the dev branch is updated, then use `git checkout -b <nombre rama>`.
+3. Check that the dev branch is updated, then use `git checkout -b <branch_name>`.
 4. The following standard will be used for the branch name:
     - If the branch adds a new **feature** the branch name will be feature/name.
     - If the branch applies a **fix** the branch name will be fix/name.
 
 To integrate the changes, you must make a pull-request pointing to the dev branch and assign it to another developer to validate that these changes are correct.
-
-# Instalación y ejecución de la página web
-
-Para ejecutar este código, hemos hecho uso de la extensión de VSCode llamada Live Server.
-
-Para ejecutarlo simplemente debemos de movernos al fichero index.html, hacer click derecho y ejecutar la opción `Open with Live Server`.
 
 
 
