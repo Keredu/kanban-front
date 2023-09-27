@@ -30,9 +30,16 @@ export default class Column {
         @event
         */
         this.elements.addItem.addEventListener('click', () => {
-            const newItem = {'name': 'New Item', 'columnId': id, 'description': 'New Item Description', 'position': 1};
+            const itemsInColumn = Array.from(this.elements.items.querySelectorAll('.kanban__item'));
+            const newItem = {'name': 'New Item', 'columnId': id, 'description': 'New Item Description', 'position': itemsInColumn.length};
             const item = KanbanAPI.insertObject(newItem, "item")
-            this.renderItem(item);
+            item.then( (value) => {
+                const values = value.json();
+                values.then( (newValue) => {
+                    console.log(newValue);
+                    this.renderItem(newValue[0]);
+                });
+            });
         });
 
         /**
