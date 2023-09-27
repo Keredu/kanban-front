@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "jsdoc": "jsdoc -r ./src/ -d ./docs",
+    "docs": "jsdoc && http-server ./docs -p 8081",
+    "http-server": "http-server ./src -p 8080"
+  },
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "jsdoc": "^4.0.2"
+  }
+}
