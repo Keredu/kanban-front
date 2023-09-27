@@ -2,7 +2,7 @@
   "scripts": {
     "jsdoc": "jsdoc -r ./src/ -d ./docs",
     "docs": "npm run jsdoc && http-server ./docs -p 8081",
-    "http-server": "http-server ./src -p 8080"
+    "http-server": "http-server ./src -p 8080 -c-1"
   },
   "dependencies": {
     "http-server": "^14.1.1",
