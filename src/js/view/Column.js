@@ -2,16 +2,21 @@ import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
 import Item from "./Item.js";
 
+/**
+ * This class represents a column
+ * @class Column
+ */
 export default class Column {
+
     /**
     * This function creates a new column
     *
-    * @constructor
+    * @constructor Column
     * 
-    * @param{id}
-    * @param{title}
+    * @param {id} - the id of the column
+    * @param {title} - the title of the column
     * 
-    * @returns{Column} - the new column
+    * @returns {Column} - the new column
     */
     constructor(id, title){
         const topDropZone = DropZone.createDropZone();
@@ -43,7 +48,7 @@ export default class Column {
         });
 
         /**
-        This function render the items in the column
+        * This function render the items in the column
         */
         Column.getItemByColumnId(id, 'item').then( (item) => {
             item.forEach(element => {
@@ -55,9 +60,9 @@ export default class Column {
     /**
     * This function creates the root of the column
     *
-    * @function
+    * @function Column
     * 
-    * @returns{DocumentFragment}
+    * @returns {DocumentFragment}
     */
     static createRoot(){
         const range = document.createRange();
@@ -71,14 +76,14 @@ export default class Column {
         `).children[0];
     }
 
-    /*
+    /**
     * This function returns all the items in the column
     *
-    * @function
+    * @function Column
     *   
-    * @param{columnId}
+    * @param {columnId}
     * 
-    * @returns{Promise<Response>} - the promise of all the items in the column
+    * @returns {Promise<Response>} - the promise of all the items in the column
     */
     static getItemByColumnId(columnId){
         return KanbanAPI.getItemsByColumnId(columnId,'item').then( (value) => {
@@ -86,12 +91,12 @@ export default class Column {
         })
     }
 
-    /*
+    /**
     * This function renders an item in the column
     *
-    * @function
+    * @function Column
     * 
-    * @param{data}
+    * @param {data}
     */
     renderItem(data){
         const item = new Item(data.itemId, data.name);

@@ -1,14 +1,25 @@
 import Column from './Column.js';
 import KanbanAPI from '../api/KanbanAPI.js';
 
+/**
+* This class creates the kanban
+*
+* @class Kanban
+* 
+* @param {root}
+*/
+
 export default class Kanban {
+    
     /**
-    * This function creates the kanban
-    *
-    * @constructor
-    * 
-    * @param {root}
-    */
+     * This constructor creates the kanban
+     * 
+     * @constructor Kanban
+     * 
+     * @param {*} root 
+     * 
+     * @returns {Kanban} - the new kanban
+     */
     constructor(root){
         this.root = root;
 
@@ -24,7 +35,7 @@ export default class Kanban {
     /**
     * This function gets all the columns from the database
     *
-    * @function
+    * @function Kanban
     * 
     * @returns {Promise<Response>}
     */
