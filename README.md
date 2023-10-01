@@ -8,7 +8,7 @@ This is the repository where the front part of the Kanban project is hosted. The
 1. Clone the repository
 
 ```
-git clone git@github.com:Keredu/kanban.git
+git clone git@github.com:Keredu/kanban-front.git
 ```
 
 2. Install dependencies

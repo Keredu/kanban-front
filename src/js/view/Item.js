@@ -1,7 +1,22 @@
 import KanbanAPI from "../api/KanbanAPI.js";
 import DropZone from "./DropZone.js";
 
+/**
+ * This class represents an Item
+ * @class Item
+ */
 export default class Item {
+
+    /**
+     * This constructor creates a new item
+     * 
+     * @constructor Item
+     * 
+     * @param {number} id - the id of the item
+     * @param {text} content - the content of the item
+     * 
+     * @returns {Item} - the new item
+     */
     constructor(id, content){
         const bottomDropZone = DropZone.createDropZone();
 
@@ -53,7 +68,7 @@ export default class Item {
     /**
     * This function creates the root of the item
     *
-    * @function
+    * @function Item
     * 
     * @returns{DocumentFragment}
     */
