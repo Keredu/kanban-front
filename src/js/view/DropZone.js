@@ -1,14 +1,21 @@
 import KanbanAPI from "../api/KanbanAPI.js";
 
-
+/**
+* This function creates the dropzone
+*
+* @class DropZone
+* 
+* @returns{DocumentFragment}
+*/
 export default class DropZone{
+
     /**
-    * This function creates the dropzone
-    *
-    * @class
-    * 
-    * @returns{DocumentFragment}
-    */
+     * This function creates the dropzone
+     * 
+     * @function DropZone
+     * 
+     * @returns {DocumentFragment}
+     */
     static createDropZone(){
         const range = document.createRange();
         range.selectNode(document.body);

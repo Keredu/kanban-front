@@ -1,9 +1,13 @@
+/**
+ * This file contains the KanbanAPI class which is used to make calls to the backend
+ * 
+ * @module KanbanAPI
+ */
 export default class KanbanAPI {
-
     /**
     * This function returns all the columns or items from the database
     *
-    * @function
+    * @function KanbanAPI
     * 
     * @param {mode} - the mode is either column or item
     * 
@@ -16,7 +20,7 @@ export default class KanbanAPI {
     /**
     * This function returns a specific column or item from the database
     *
-    * @function
+    * @function KanbanAPI
     * 
     * @param {objectId} - the id of the item or column
     * @param {mode} - the mode is either column or item
@@ -30,7 +34,7 @@ export default class KanbanAPI {
     /**
     * This function inserts a new column or item into the database
     *
-    * @function
+    * @function KanbanAPI
     *  
     * @param {object} - the item to be inserted into the database
     * @param {mode} - the mode is either column or item
@@ -50,7 +54,7 @@ export default class KanbanAPI {
     /**
     * This function updates a column or item in the database
     *
-    * @function
+    * @function KanbanAPI
     * 
     * @param {objectId} - the id of the item or column
     * @param {newItem} - the new item to be updated in the database
@@ -72,7 +76,7 @@ export default class KanbanAPI {
     /**
     * This function deletes a column or item from the database
     *
-    * @function
+    * @function KanbanAPI
     * 
     * @param {objectId} - the id of the item or column
     * @param {mode} - the mode is either column or item
@@ -88,7 +92,7 @@ export default class KanbanAPI {
     /**
     * This function returns all the items in a column from the database
     *
-    * @function
+    * @function KanbanAPI
     * 
     * @param {columnId} - the id of the column
     * @param {mode} - the mode is either column or item
