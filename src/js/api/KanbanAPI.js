@@ -14,7 +14,7 @@ export default class KanbanAPI {
     * @returns {Promise<Response>} - the promise of all the columns or items
     */
 	static async getObjects(mode) {
-        return fetch(`http://localhost:5000/${mode}/`);
+        return fetch(`http://localhost:5000/kanban/${mode}/`);
 	}
 
     /**
@@ -28,7 +28,7 @@ export default class KanbanAPI {
     * @returns {Promise<Response>} - the promise of the column or item
     */
     static async getObjectID(objectId, mode){
-        return fetch(`http://localhost:5000/${mode}/${objectId}`);
+        return fetch(`http://localhost:5000/kanban/${mode}/${objectId}`);
     }
 
     /**
@@ -42,7 +42,7 @@ export default class KanbanAPI {
     * @returns {Promise<Response>} - the promise of the inserted column or item
     */
     static async insertObject(object, mode){
-        return fetch(`http://localhost:5000/${mode}/`, {
+        return fetch(`http://localhost:5000/kanban/${mode}/`, {
             method: 'POST',
             body: JSON.stringify(object),
             headers: {
@@ -63,7 +63,7 @@ export default class KanbanAPI {
     * @returns {Promise<Response>} - the promise of the updated column or item
     */
     static async updateObject(objectId, newObject, mode){
-        const url = `http://localhost:5000/${mode}/${objectId}`;
+        const url = `http://localhost:5000/kanban/${mode}/${objectId}`;
         return fetch(url, {
             method: 'PUT',
             body: JSON.stringify(newObject),
@@ -84,7 +84,7 @@ export default class KanbanAPI {
     * @returns{Promise<Response>} - the promise of the deleted column or item
     */
     static async deleteObject(objectId, mode){
-        return fetch(`http://localhost:5000/${mode}/${objectId}`, {
+        return fetch(`http://localhost:5000/kanban/${mode}/${objectId}`, {
             method: 'DELETE'
         });
     }
@@ -100,6 +100,6 @@ export default class KanbanAPI {
     * @returns {Promise<Response>} - the promise of all the items in a column
     */
     static async getItemsByColumnId(columnId, mode){
-        return fetch(`http://localhost:5000/${mode}/${columnId}/column/`);
+        return fetch(`http://localhost:5000/kanban/${mode}/${columnId}/column/`);
     }
 }
